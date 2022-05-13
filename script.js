@@ -9,7 +9,7 @@ function makeGrid(size) {
         square.style.height = 500 / size + "px";
 
         square.addEventListener('mouseenter', function(){
-            square.classList.add("active");
+            square.classList.add(squareClass);
         });
     }
 
@@ -19,8 +19,8 @@ function makeGrid(size) {
 
 makeGrid(16, 20);
 
-const btn = document.querySelector('#newGame');
-btn.addEventListener('click', () => {
+const gameBtn = document.querySelector('#newGame');
+gameBtn.addEventListener('click', () => {
     
     function removeAllChildNodes(parent){
         while(parent.firstChild) {
@@ -30,7 +30,7 @@ btn.addEventListener('click', () => {
 
     removeAllChildNodes(container);
 
-    var quantity = prompt("Please enter the number of squares for your grid:");
+    var quantity = prompt("Please enter a number between 1 and 100 to choose your pixel size:");
 
     if (quantity <= 100){
         makeGrid(quantity);
@@ -38,3 +38,21 @@ btn.addEventListener('click', () => {
         alert("Please try again with a number less than 100.")
     }
 });
+
+let button = false
+let squareClass = "active"
+
+const colourBtn = document.querySelector('#colour')
+colourBtn.addEventListener('click', () => {
+    if(button === true){
+        button = !button
+        colourBtn.textContent = "Blue again!"
+        return squareClass = "active"
+    } else {
+        button = !button
+        colourBtn.textContent = "Back to Black!"
+        return squareClass = "colour"
+    }    
+})
+
+

@@ -19,7 +19,7 @@ body {
     display: inline-block;
 }
 
-#newGame {
+btn {
     padding: 10px;
     border: none;
     margin: 10px;
@@ -30,11 +30,19 @@ body {
     transition-duration: 0.4s;
 }
 
-#newGame:hover {
+btn:hover {
     background-color: white;
     color: #80aaff;
 }
 
 .active {
     background-color: black;
+}
+
+.colour {
+    background-color: #80aaff;
+}
+
+.active.colour {
+    background-color: #1d68ff;
 }
